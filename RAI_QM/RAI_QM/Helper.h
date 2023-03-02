@@ -5,5 +5,6 @@ class Helper
 {
 public:
 	static std::vector<std::string> split(std::string splitPlace,std::string str);
+	static std::string join(std::string addString, std::vector<std::string> vec);
 };
 

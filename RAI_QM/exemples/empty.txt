@@ -1,2 +1,5 @@
-0,0
+2,3
+cute,fluffy,loyal
 
+cat:cute,fluffy
+dog:cute,loyal

@@ -13,3 +13,14 @@ std::vector<std::string> Helper::split(std::string splitPlace, std::string str)
     splitedstr.push_back(str.substr(0));
     return splitedstr;
 }
+
+std::string Helper::join(std::string addString, std::vector<std::string> vec)
+{
+    std::string line = "";
+    for (auto it = vec.begin(); it != vec.end(); it++)
+    {
+        line+= *it+addString;
+    }
+    line = line.substr(0, line.length() - 1);
+    return line;
+}

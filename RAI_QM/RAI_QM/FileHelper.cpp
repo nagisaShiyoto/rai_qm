@@ -45,3 +45,40 @@ void FileHelper::getData(std::vector<std::string>& properties, std::vector<Item*
     properties = FileHelper::getProperties(atoi(amounts[1].c_str()));
     items = FileHelper::getItems(atoi(amounts[0].c_str()));
 }
+
+void FileHelper::saveData(std::vector<std::string>& properties, std::vector<Item*>& items)
+{
+    ///////////////////////////////////get all the info to vector//////////////////////////////////////////
+    //clear for txt
+    txt.clear();
+    std::string line = "";
+    line = std::to_string(items.size()) + "," + std::to_string(properties.size());
+    txt.push_back(line);
+    FileHelper::saveProperties(properties);
+    txt.push_back("");
+    FileHelper::saveItems(items);
+    ///////////////////////////////////get all the info to vector//////////////////////////////////////////
+    /////////////////////////////////////////write to file/////////////////////////////////////////////////
+    std::ofstream file(FILE_PATH);
+    for (auto it = txt.begin(); it != txt.end(); it++)
+    {
+        file << *it << std::endl;
+    }
+    /////////////////////////////////////////write to file/////////////////////////////////////////////////
+}
+
+void FileHelper::saveProperties(std::vector<std::string> const properties)
+{
+    std::string line = Helper::join(",", properties);
+    txt.push_back(line);
+}
+
+void FileHelper::saveItems(std::vector<Item*> const items)
+{
+    std::string line = "";
+    for (auto it = items.begin(); it != items.end(); it++)
+    {
+        line = (*it)->getName() + ":" + Helper::join(",", (*it)->getProperties());
+        txt.push_back(line);
+    }
+}
