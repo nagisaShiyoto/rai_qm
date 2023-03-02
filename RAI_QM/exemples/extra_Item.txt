@@ -1,0 +1,6 @@
+2,3
+cute,fluffy,loyal
+
+cat:cute,fluffy
+dog:cute,loyal
+mouse:small,sneaky

@@ -1,0 +1,5 @@
+2,3
+cute,fluffy,loyal,smart
+
+cat:cute,fluffy,smart
+dog:cute,loyal,smart
