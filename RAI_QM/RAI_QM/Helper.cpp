@@ -24,3 +24,28 @@ std::string Helper::join(std::string addString, std::vector<std::string> vec)
     line = line.substr(0, line.length() - 1);
     return line;
 }
+
+std::string Helper::getAnswersFromUser(std::string question)
+{
+    std::string answer = "";
+    do
+    {
+        std::cout << question << std::endl;
+        std::cin >> answer;
+    } while (answer != "t" && answer != "f" && answer != "true" && answer != "false");
+    return answer;
+}
+
+bool Helper::toBool(std::string answer)
+{
+    if (answer == "t" || answer == "true")
+    {
+        return true;
+    }
+    if (answer == "f" || answer == "false")
+    {
+        return false;
+    }
+    std::cout << "cant convert to bool";
+    throw std::exception("cant convert to bool");
+}

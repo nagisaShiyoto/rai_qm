@@ -1,9 +1,17 @@
-6,6
-cute,fluffy,loyal,a,b,c
+14,16
+cute,a animal,fluffy,loyal,a person,a god,a magician,old,have super-powers,a man,a woman,yotam's love,a predator,big,small,DON'T LIKE MUSICALS
 
-cat:cute,fluffy
-dog:cute,loyal
-abba:c,a
-abba shel:b,a
-abba shel aggasi:a
-aaaaaa:cute,a
+cat:a animal,cute,fluffy,a god
+dog:a animal,cute,loyal
+mouse:a animal,small,sneaky
+abba shel agasy:a man,a person,a god
+herry piter:a man,a person,a magician
+dambeldor:a man,a person,a magician, old
+harmayoni:a woman,a person,a magician
+soupermen:a man,a person,have super-powers
+supergirl:a woman,a person,have super-powers
+eylon:a person,a man,a god,yotam's love
+lion:a animal,a predator,fluffy
+elephant:a animal,big
+poul:a person,a boy,DON'T LIKE MUSICALS
+wolf:a animal,a predator

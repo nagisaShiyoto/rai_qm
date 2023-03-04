@@ -25,21 +25,9 @@ void Algorithm::playGame()
 	std::string answer = "";
 	while (this->_items.size() > 1)
 	{
-		do
-		{
-			property = this->getQuestion();
-			std::cout << "is it " << property << " (t/f)" << std::endl;
-			std::cin >> answer;
-		}
-		while (answer != "t" && answer != "f"&& answer != "true" && answer != "false");
-		if (answer == "t" || answer == "true")
-		{
-			this->selection(true, property);
-		}
-		else
-		{
-			this->selection(false, property);
-		}
+		property = this->getQuestion();
+		answer = Helper::getAnswersFromUser("is it " + property + " (t/f)");
+		this->selection(Helper::toBool(answer), property);
 	}
 	if (this->_items.size() == 0)
 	{
@@ -48,7 +36,7 @@ void Algorithm::playGame()
 	}
 	else
 	{
-		std::cout << "is it: " << this->_items[0]->getName();
+		std::cout << "is it: " << this->_items[0]->getName()<<"?"<<std::endl;
 	}
 }
 
