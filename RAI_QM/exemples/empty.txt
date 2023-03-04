@@ -1,5 +1,9 @@
-2,3
-cute,fluffy,loyal
+6,6
+cute,fluffy,loyal,a,b,c
 
 cat:cute,fluffy
 dog:cute,loyal
+abba:c,a
+abba shel:b,a
+abba shel aggasi:a
+aaaaaa:cute,a

@@ -30,10 +30,10 @@ std::vector<Item*> FileHelper::getItems(int const amount_of_items)
     return items;
 }
 
-void FileHelper::getData(std::vector<std::string>& properties, std::vector<Item*>& items)
+void FileHelper::getData(std::vector<std::string>& properties, std::vector<Item*>& items, std::string filePath)
 {
     //////////////////////////////get all the text from file//////////////////////////
-    std::ifstream file(FILE_PATH);
+    std::ifstream file(filePath);
     std::string line = "";
     while (std::getline(file, line))
     {
@@ -46,7 +46,7 @@ void FileHelper::getData(std::vector<std::string>& properties, std::vector<Item*
     items = FileHelper::getItems(atoi(amounts[0].c_str()));
 }
 
-void FileHelper::saveData(std::vector<std::string>& properties, std::vector<Item*>& items)
+void FileHelper::saveData(std::vector<std::string>& properties, std::vector<Item*>& items,std::string filePath)
 {
     ///////////////////////////////////get all the info to vector//////////////////////////////////////////
     //clear for txt
@@ -59,7 +59,7 @@ void FileHelper::saveData(std::vector<std::string>& properties, std::vector<Item
     FileHelper::saveItems(items);
     ///////////////////////////////////get all the info to vector//////////////////////////////////////////
     /////////////////////////////////////////write to file/////////////////////////////////////////////////
-    std::ofstream file(FILE_PATH);
+    std::ofstream file(filePath);
     for (auto it = txt.begin(); it != txt.end(); it++)
     {
         file << *it << std::endl;

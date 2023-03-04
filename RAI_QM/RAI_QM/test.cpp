@@ -3,11 +3,10 @@
 #include "Item.h"
 #include <iostream>
 #include <vector>
+#include "Algorithm.h"
 int main()
 {
-	std::vector<std::string> properties;
-	std::vector<Item*> items;
-	FileHelper::getData(properties, items);
-	FileHelper::saveData(properties, items);
+	Algorithm test("../exemples/empty.txt");
+	test.playGame();
 	return 0;
 }
