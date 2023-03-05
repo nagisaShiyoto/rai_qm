@@ -128,15 +128,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Algorithm.h" />
+    <ClInclude Include="Debug.h" />
     <ClInclude Include="FileHelper.h" />
     <ClInclude Include="Helper.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="saveDataBase.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Algorithm.cpp" />
+    <ClCompile Include="Debug.cpp" />
     <ClCompile Include="FileHelper.cpp" />
     <ClCompile Include="Helper.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="saveDataBase.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

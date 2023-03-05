@@ -21,23 +21,37 @@ Algorithm::Algorithm(std::string filePath)
 
 void Algorithm::playGame()
 {
+	std::vector<std::string> prop;
+	bool present = false;
 	std::string property = "";
 	std::string answer = "";
 	while (this->_items.size() > 1)
 	{
 		property = this->getQuestion();
 		answer = Helper::getAnswersFromUser("is it " + property + " (t/f)");
-		this->selection(Helper::toBool(answer), property);
+		present = Helper::toBool(answer);
+		this->selection(present, property);
+		if (present)
+		{
+			prop.push_back(property);
+		}
 	}
 	if (this->_items.size() == 0)
 	{
-		std::cout << "coudnt find item";
-		throw std::exception();
+		std::cout << "coudnt find item"<<std::endl;
 	}
 	else
 	{
-		std::cout << "is it: " << this->_items[0]->getName()<<"?"<<std::endl;
+		answer=Helper::getAnswersFromUser( "is it: " + this->_items[0]->getName() + "?(t/f)");
+		//if it got it right stop this fanction
+		if (Helper::toBool(answer))
+		{
+			return;
+		}
 	}
+	std::cout << "who did you think about: ";
+	std::cin >> answer;
+	
 }
 
 Algorithm::~Algorithm()
