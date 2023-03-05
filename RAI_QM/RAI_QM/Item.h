@@ -16,6 +16,7 @@ public:
 	//---------//
 	void setName(const std::string name);
 	void addProperty(const std::string property);
+	void setProperty(std::vector<std::string> propeties);
 
 	//---------//
 	// methods //

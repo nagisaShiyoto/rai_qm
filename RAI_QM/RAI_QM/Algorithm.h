@@ -12,7 +12,10 @@ public:
 	Algorithm(std::string filePath);
 	void playGame();
 	~Algorithm();
+	void setPropertyKey(std::vector<std::string> prop);
+	void setItems(std::vector<Item*> items);
 private:
+	void duplicates();
 	std::string getQuestion();
 	//it suppose to be has but we need it fancy:)
 	void selection(bool present, std::string property);

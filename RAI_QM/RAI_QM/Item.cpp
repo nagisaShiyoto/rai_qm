@@ -40,6 +40,11 @@ void Item::addProperty(const std::string property)
 	this->_properties.push_back(property);
 }
 
+void Item::setProperty(std::vector<std::string> propeties)
+{
+	this->_properties = propeties;
+}
+
 /*
 the func checks if the Item has a given property
 input: the property (string)

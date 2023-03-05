@@ -1,5 +1,6 @@
+#include <Windows.h>
 #include "Helper.h"
-
+#include <string>
 std::vector<std::string> Helper::split(std::string splitPlace, std::string str)
 {
     std::vector<std::string> splitedstr;
@@ -31,7 +32,7 @@ std::string Helper::getAnswersFromUser(std::string question)
     do
     {
         std::cout << question << std::endl;
-        std::cin >> answer;
+        std::getline(std::cin, answer);
     } while (answer != "t" && answer != "f" && answer != "true" && answer != "false");
     return answer;
 }
@@ -48,4 +49,18 @@ bool Helper::toBool(std::string answer)
     }
     std::cout << "cant convert to bool";
     throw std::exception("cant convert to bool");
+}
+
+void Helper::set_console_color(unsigned int color)
+{
+    // colors are 0=black 1=blue 2=green and so on to 15=white
+    // colorattribute = foreground + background * 16
+    // to get red text on yellow use 4 + 1416 = 228
+    // light red on yellow would be 12 + 1416 = 236
+    // a Dev-C++ tested console application by vegaseat 07nov2004
+
+    HANDLE hConsole;
+
+    hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, color);
 }

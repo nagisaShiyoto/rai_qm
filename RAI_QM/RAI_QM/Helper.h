@@ -8,5 +8,5 @@ public:
 	static std::string join(std::string addString, std::vector<std::string> vec);
 	static std::string getAnswersFromUser(std::string question);
 	static bool toBool(std::string answer);
+    static void set_console_color(unsigned int color);
 };
-
